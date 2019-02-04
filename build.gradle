@@ -1,0 +1,38 @@
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'application'
+
+mainClassName = 'webcrawler.Crawler'
+
+// tag::repositories[]
+repositories { 
+    mavenCentral() 
+}
+// end::repositories[]
+
+// tag::jar[]
+jar {
+    baseName = 'WebCrawler'
+    version =  '0.1.0'
+}
+// end::jar[]
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+dependencies {
+    compile "joda-time:joda-time:2.2"
+    compile "org.jsoup:jsoup:1.11.3"
+    compile "commons-validator:commons-validator:1.3.1"
+    compile "oro:oro:2.0.8"
+    // https://mvnrepository.com/artifact/org.slf4j/slf4j-api
+    compile "org.slf4j:slf4j-api:1.7.21"
+    compile "org.slf4j:slf4j-simple:1.7.21"
+
+
+    testCompile "junit:junit:4.12"
+}
+// end::dependencies[]
+
+// tag::wrapper[]
+// end::wrapper[]
